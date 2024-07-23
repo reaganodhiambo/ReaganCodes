@@ -7,7 +7,7 @@ from django.contrib.auth.models import (
 
 # Create your models here.
 class CustomUserManager(BaseUserManager):
-    def create_User(self, email, password=None,**extra_fields):
+    def create_user(self, email, password=None,**extra_fields):
         if not email:
             raise ValueError("Email must be provided")
         

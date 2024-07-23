@@ -25,7 +25,7 @@ if ENVIRONMENT == "development":
 else:
     DEBUG = False
 
-ALLOWED_HOSTS = [os.getenv("ALLOWED_HOSTS").split(",")]
+ALLOWED_HOSTS = ['127.0.0.1',"reagancodes.com"]
 
 
 # Application definition

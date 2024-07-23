@@ -27,6 +27,7 @@ dist-ssr
 
 .venv
 .venv/
+.env
 
 # Django stuff:
 *.log
@@ -35,10 +36,9 @@ db.sqlite3
 db.sqlite3-journal
 
 # Byte-compiled / optimized / DLL files
-__pycache__/
 *.py[cod]
 *$py.class
-/__pycache__
+__pycache__/
 # C extensions
 *.so
 
@@ -47,10 +47,9 @@ Frontend/
 actions-runner/
 
 #app migrations
-*/migrations/
-*/migrations/
+*/migrations/*.py
+migrations/
 
-*/migrations/__init__.py
 */migrations/__init__.py
 
 
