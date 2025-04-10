@@ -1,14 +1,14 @@
-import './App.css'
+import './index.css';
 
 function App() {
-
   return (
-    <>
-      <div className="flex items-center justify-center h-screen bg-gray-100">
-      <h1 className="text-4xl font-bold text-blue-500">Hello, Tailwind!</h1>
+    <div >
+      <h1>Hello, Tailwind!</h1>
+      <p className="text-neutral-gray">
+        This is a paragraph styled with <span className='text-accent-purple'>Fira Code</span> and custom theme variables.
+      </p>
     </div>
-    </>
-  )
+  );
 }
 
-export default App
+export default App;
