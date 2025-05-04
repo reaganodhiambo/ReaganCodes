@@ -42,7 +42,6 @@ __pycache__/
 # C extensions
 *.so
 
-Frontend/
 #local action runners
 actions-runner/
 
