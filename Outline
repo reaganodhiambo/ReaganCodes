@@ -1,0 +1,33 @@
+portfolio-website/
+├── client/                  # Frontend React app
+│   ├── public/              # Public assets
+│   │   ├── favicon.ico
+│   │   └── robots.txt
+│   ├── src/                 # Source code
+│   │   ├── assets/          # Static assets (images, fonts)
+│   │   ├── components/      # Reusable components
+│   │   │   ├── common/      # Common UI components (Button, Card, etc.)
+│   │   │   ├── layout/      # Layout components (Header, Footer, etc.)
+│   │   │   └── sections/    # Page sections (Hero, About, Projects, etc.)
+│   │   ├── hooks/           # Custom React hooks
+│   │   ├── pages/           # Page components
+│   │   │   ├── Home.jsx
+│   │   │   ├── About.jsx
+│   │   │   ├── Projects.jsx
+│   │   │   ├── Blog.jsx     # Will fetch data from Django backend
+│   │   │   ├── Contact.jsx
+│   │   │   └── NotFound.jsx
+│   │   ├── utils/           # Utility functions
+│   │   ├── App.jsx          # Main App component
+│   │   ├── main.jsx         # Entry point
+│   │   └── index.css        # Global styles
+│   ├── .eslintrc.js         # ESLint configuration
+│   ├── tailwind.config.js   # Tailwind configuration
+│   ├── vite.config.js       # Vite configuration
+│   └── package.json         # Frontend dependencies
+├── server/                  # Django backend
+│   ├── blog/                # Django blog app
+│   ├── portfolio/           # Django project folder
+│   ├── manage.py
+│   └── requirements.txt     # Backend dependencies
+└── README.md                # Project documentation

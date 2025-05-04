@@ -5,7 +5,8 @@
   --color-accent-purple: #C778DD;
   --color-neutral-gray: #ABB2BF;
   --color-pure-white: #FFFFFF;
-  --color-dark-background: #282C33;
+  --color-dark-background: #272C34;
+  --color-card-background: #23232b;
 
   /* Font Families */
   --font-sans: 'Inter', sans-serif;
@@ -22,14 +23,14 @@ body {
 }
 
 p {
-  @apply text-neutral-gray text-base; /* Neutral gray color and 16px font size */
+  @apply text-neutral-gray; /* Neutral gray color and 16px font size */
 }
 
 h1, h2, h3, h4, h5, h6 {
-  @apply text-pure-white text-[32px] font-bold; /* Use the custom heading size and make it bold */
+  @apply text-pure-white; /* Use the custom heading size and make it bold */
 }
 
-/* Button styles */
-button {
-  @apply bg-accent-purple text-pure-white font-bold py-2 px-4 rounded;
+/* Utility classes */
+.bg-card {
+  background-color: var(--color-card-background);
 }
