@@ -1,16 +1,19 @@
 import React from 'react';
 import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope, FaPhone, FaMapMarkerAlt, FaPaperPlane, FaInstagram } from 'react-icons/fa';
-import PageTitle from '../components/PageTitle';
+import PageMeta from '../components/PageMeta';
 
 const Contacts = () => {
   return (
     <main className="bg-dark-background min-h-screen py-16 px-4">
-      <PageTitle title="Contact Me" description="Get in touch with Reagan Odhiambo for web development projects and collaborations" />
+      <PageMeta 
+        title="Contact Me"
+        description="Ready to transform your digital presence? As a full stack developer, I offer personalized solutions tailored to your business needs. Let's collaborate on your vision."
+      />
       
       <div className="container mx-auto">
         <div className="flex flex-col md:min-h-[40vh] md:p-8 md:items-center md:justify-center">
-          <h1 className="text-4xl md:text-8xl font-semibold mb-4 text-accent-purple">
-            contacts<span className='text-accent-purple'>/</span>
+          <h1 className="text-4xl md:text-8xl font-semibold mb-4 text-sky-blue">
+            contacts<span className='text-sky-blue'>/</span>
           </h1>
           <p className="text-xl mb-12 max-w-3xl">
             I'm interested in freelance opportunities and collaborations.
@@ -25,38 +28,38 @@ const Contacts = () => {
               {
                 title: "Email",
                 description: "For project inquiries or general questions, reach out to me via...",
-                icon: <FaEnvelope className="text-accent-purple text-4xl" />,
+                icon: <FaEnvelope className="text-sky-blue text-4xl" />,
                 contact: "hello@reagancodes.com",
                 link: "mailto:hello@reagancodes.com"
               },
               {
                 title: "Phone",
                 description: "Feel free to schedule a call for project discussions.",
-                icon: <FaPhone className="text-accent-purple text-4xl" />,
+                icon: <FaPhone className="text-sky-blue text-4xl" />,
                 contact: "+254 111 224 642",
                 link: "tel:+254111224642"
               },
               {
                 title: "Location",
                 description: "Based in Nairobi, Kenya but available for remote work.",
-                icon: <FaMapMarkerAlt className="text-accent-purple text-4xl" />,
+                icon: <FaMapMarkerAlt className="text-sky-blue text-4xl" />,
                 contact: "Nairobi, Kenya",
                 link: null
               }
             ].map((item, index) => (
               <div
                 key={index}
-                className="p-8 border border-neutral-gray rounded-lg hover:border-accent-purple transition-all"
+                className="p-8 border border-neutral-gray rounded-lg hover:border-sky-blue transition-all"
               >
                 <div className="mb-6">{item.icon}</div>
                 <h3 className="text-2xl font-bold mb-4">{item.title}</h3>
                 <p className="mb-4">{item.description}</p>
                 {item.link ? (
-                  <a href={item.link} className="text-accent-purple hover:underline text-xl">
+                  <a href={item.link} className="text-sky-blue hover:underline text-xl">
                     {item.contact}
                   </a>
                 ) : (
-                  <span className="text-accent-purple text-xl">{item.contact}</span>
+                  <span className="text-sky-blue text-xl">{item.contact}</span>
                 )}
               </div>
             ))}
@@ -72,7 +75,7 @@ const Contacts = () => {
                 <input 
                   type="text" 
                   id="name" 
-                  className="w-full bg-dark-background border border-gray-700 rounded-lg p-3 text-white focus:border-accent-purple focus:outline-none"
+                  className="w-full bg-dark-background border border-gray-700 rounded-lg p-3 text-white focus:border-sky-blue focus:outline-none"
                   placeholder="Your name"
                 />
               </div>
@@ -81,7 +84,7 @@ const Contacts = () => {
                 <input 
                   type="email" 
                   id="email" 
-                  className="w-full bg-dark-background border border-gray-700 rounded-lg p-3 text-white focus:border-accent-purple focus:outline-none"
+                  className="w-full bg-dark-background border border-gray-700 rounded-lg p-3 text-white focus:border-sky-blue focus:outline-none"
                   placeholder="Your email"
                 />
               </div>
@@ -90,13 +93,13 @@ const Contacts = () => {
                 <textarea 
                   id="message" 
                   rows="5" 
-                  className="w-full bg-dark-background border border-gray-700 rounded-lg p-3 text-white focus:border-accent-purple focus:outline-none"
+                  className="w-full bg-dark-background border border-gray-700 rounded-lg p-3 text-white focus:border-sky-blue focus:outline-none"
                   placeholder="Your message"
                 ></textarea>
               </div>
               <button 
                 type="submit" 
-                className="bg-accent-purple hover:bg-opacity-90 transition-all text-white px-6 py-3 rounded-lg"
+                className="bg-sky-blue hover:bg-opacity-90 transition-all text-white px-6 py-3 rounded-lg"
               >
                 Send Message
               </button>
@@ -114,12 +117,12 @@ const Contacts = () => {
                   <input 
                     type="email" 
                     placeholder="Enter your email" 
-                    className="w-full bg-dark-background border border-gray-700 rounded-lg p-3 text-white focus:border-accent-purple focus:outline-none"
+                    className="w-full bg-dark-background border border-gray-700 rounded-lg p-3 text-white focus:border-sky-blue focus:outline-none"
                   />
                 </div>
                 <button 
                   type="submit" 
-                  className="w-full flex items-center justify-center gap-2 bg-accent-purple hover:bg-opacity-90 transition-all text-white px-6 py-3 rounded-lg"
+                  className="w-full flex items-center justify-center gap-2 bg-sky-blue hover:bg-opacity-90 transition-all text-white px-6 py-3 rounded-lg"
                 >
                   <FaPaperPlane />
                   <span>Subscribe</span>
@@ -137,7 +140,7 @@ const Contacts = () => {
                   href="https://github.com/reaganodhiambo" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-neutral-gray hover:text-accent-purple"
+                  className="text-neutral-gray hover:text-sky-blue"
                 >
                   <FaGithub className="text-3xl" />
                 </a>
@@ -145,7 +148,7 @@ const Contacts = () => {
                   href="https://www.linkedin.com/in/reaganodhiambo404/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-neutral-gray hover:text-accent-purple"
+                  className="text-neutral-gray hover:text-sky-blue"
                 >
                   <FaLinkedin className="text-3xl" />
                 </a>
@@ -153,7 +156,7 @@ const Contacts = () => {
                   href="https://twitter.com/fadh3lah" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-neutral-gray hover:text-accent-purple"
+                  className="text-neutral-gray hover:text-sky-blue"
                 >
                   <FaTwitter className="text-3xl" />
                 </a>
@@ -161,7 +164,7 @@ const Contacts = () => {
                   href="https://www.instagram.com/fadh3lah" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-neutral-gray hover:text-accent-purple"
+                  className="text-neutral-gray hover:text-sky-blue"
                 >
                   <FaInstagram className="text-3xl" />
                 </a>

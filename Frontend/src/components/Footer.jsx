@@ -23,16 +23,16 @@ const Footer = () => {
           <div className="flex flex-col items-center md:items-start">
             <h3 className="text-lg font-semibold mb-4">Connect</h3>
             <div className="flex space-x-4">
-              <a href="https://github.com/reaganodhiambo" className="text-neutral-gray hover:text-accent-purple" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/reaganodhiambo" className="text-neutral-gray hover:text-sky-blue" target="_blank" rel="noopener noreferrer">
                 <FaGithub className="w-6 h-6" />
               </a>
-              <a href="https://www.linkedin.com/in/reaganodhiambo404/" className="text-neutral-gray hover:text-accent-purple" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/reaganodhiambo404/" className="text-neutral-gray hover:text-sky-blue" target="_blank" rel="noopener noreferrer">
                 <FaLinkedin className="w-6 h-6" />
               </a>
-              <a href="https://twitter.com/fadh3lah" className="text-neutral-gray hover:text-accent-purple" target="_blank" rel="noopener noreferrer">
+              <a href="https://twitter.com/fadh3lah" className="text-neutral-gray hover:text-sky-blue" target="_blank" rel="noopener noreferrer">
                 <FaTwitter className="w-6 h-6" />
               </a>
-              <a href="mailto:hello@reagancodes.com" className="text-neutral-gray hover:text-accent-purple" target="_blank" rel="noopener noreferrer">
+              <a href="mailto:hello@reagancodes.com" className="text-neutral-gray hover:text-sky-blue" target="_blank" rel="noopener noreferrer">
                 <FaEnvelope className="w-6 h-6" />
               </a>
             </div>
@@ -45,7 +45,7 @@ const Footer = () => {
             <ul className="flex flex-wrap justify-center gap-4">
               {navItems.map((item) => (
                 <li key={item.name}>
-                  <Link to={item.path} className="text-neutral-gray hover:text-accent-purple">
+                  <Link to={item.path} className="text-neutral-gray hover:text-sky-blue">
                     {item.name}
                   </Link>
                 </li>

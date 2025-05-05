@@ -1,24 +1,30 @@
 import React from 'react';
 import Button from '../components/Button';
-import PageTitle from '../components/PageTitle';
+import PageMeta from '../components/PageMeta';
 import { works } from '../assets/data';
 import reagan from '../assets/images/reagan.png';
+import CodingLanguages from '../components/CodingLanguages';
 
 const Home = () => {
+  
+  
   return (
-    <main className="bg-dark-background min-h-screen">
-      <PageTitle title="Home" description="Web developer specializing in React and Django, creating exceptional digital experiences" />
+    <div className="bg-dark-background min-h-screen">
+      <PageMeta 
+        title="Home"
+        description="Full-stack developer crafting exceptional online experiences. I transform business challenges into elegant solutions that engage users and drive growth. Let's build something amazing together."
+      />
       
       {/* Hero Section */}
-      <section className="relative md:py-20 py-0 bg-dark-background min-h-[92vh] flex items-center justify-center">
+      <section className="relative md:py-20 py-10 bg-dark-background min-h-[92vh] flex items-center justify-center">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2  gap-12 items-center">
             <div className="text-left">
               <h1 className="text-5xl md:text-7xl font-medium mb-6">
-                Hello, I'm <span className="text-accent-purple">Reagan</span>
+                Hello, <br className='md:hidden'/> I'm <span className="text-sky-blue">Reagan</span>
               </h1>
               <p className="text-2xl text-neutral-gray mb-8">
-                And I transform ideas into exceptional digital experiences.
+                A full stack software developer and I transform ideas into exceptional digital experiences.
               </p>
               <div className="flex gap-4 md:gap-8 justify-around md:justify-start items-center">
                 <Button variant='outlined' to="/projects">
@@ -34,7 +40,7 @@ const Home = () => {
                 <img
                   src={reagan}
                   alt="Reagan Odhiambo"
-                  className="w-full h-full object-cover rounded-full shadow-lg border-b-3  border-accent-purple"
+                  className="w-full h-full object-cover rounded-full shadow-lg border-b-3 border-sky-blue"
                 />
               </div>
             </div>
@@ -46,8 +52,8 @@ const Home = () => {
       <section className="py-16 px-4 bg-card">
         <div className="container mx-auto">
           <div className="flex flex-col md:pt-0 md:items-center mb-12">
-            <h2 className="text-4xl md:text-6xl font-semibold mb-4 text-accent-purple">
-              about<span className='text-accent-purple'>/</span>me
+            <h2 className="text-4xl md:text-6xl font-semibold mb-4 text-sky-blue">
+              about<span className='text-sky-blue'>/</span>me
             </h2>
             <p className="text-xl mb-6 max-w-3xl md:text-center">
               The rare combination of a tech geek, problem solver, and sports enthusiast. When I'm not turning coffee into code, I'm out playing rollball.
@@ -60,12 +66,12 @@ const Home = () => {
                 I'm that dev who actually enjoys finding bugs — it's like being a detective, but the culprit is usually a missing semicolon. Based in Nairobi but my code runs worldwide.
               </p>
               <div className="grid grid-cols-2 gap-6 mb-8">
-                <div className="p-4 border border-neutral-gray rounded-lg hover:border-accent-purple transition-all bg-card">
-                  <h3 className="text-2xl font-bold text-accent-purple mb-2">2+ years</h3>
+                <div className="p-4 border border-neutral-gray rounded-lg hover:border-sky-blue transition-all bg-card">
+                  <h3 className="text-2xl font-bold text-sky-blue mb-2">4+ years</h3>
                   <p className="text-neutral-gray">Professional Experience</p>
                 </div>
-                <div className="p-4 border border-neutral-gray rounded-lg hover:border-accent-purple transition-all bg-card">
-                  <h3 className="text-2xl font-bold text-accent-purple mb-2">15+</h3>
+                <div className="p-4 border border-neutral-gray rounded-lg hover:border-sky-blue transition-all bg-card">
+                  <h3 className="text-2xl font-bold text-sky-blue mb-2">20+</h3>
                   <p className="text-neutral-gray">Completed Projects</p>
                 </div>
               </div>
@@ -77,7 +83,7 @@ const Home = () => {
               <img
                 src={reagan}
                 alt="Reagan Odhiambo"
-                className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-full shadow-lg border-b-4 border-accent-purple"
+                className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-full shadow-lg border-b-4 border-sky-blue"
               />
             </div>
           </div>
@@ -88,8 +94,8 @@ const Home = () => {
       <section className="py-16 px-4 bg-dark-background">
         <div className="container mx-auto">
           <div className="flex flex-col md:min-h-[30vh] md:p-8 md:items-center md:justify-center mb-12">
-            <h2 className="text-4xl md:text-6xl font-semibold mb-4 text-accent-purple">
-              expertise<span className='text-accent-purple'>/</span>
+            <h2 className="text-4xl md:text-6xl font-semibold mb-4 text-sky-blue">
+              expertise<span className='text-sky-blue'>/</span>
             </h2>
             <p className="text-xl mb-6 max-w-3xl md:text-center">
               Areas where I can help transform your ideas into reality, from concept to deployment.
@@ -116,7 +122,7 @@ const Home = () => {
             ].map((service, index) => (
               <div
                 key={index}
-                className="p-8 border border-neutral-gray rounded-lg hover:border-accent-purple transition-all bg-card"
+                className="p-8 border border-neutral-gray rounded-lg hover:border-sky-blue transition-all bg-card"
               >
                 <div className="text-4xl mb-6">{service.icon}</div>
                 <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
@@ -131,8 +137,8 @@ const Home = () => {
       <section className="py-16 px-4 bg-card">
         <div className="container mx-auto">
           <div className="flex flex-col md:min-h-[30vh] md:p-8 md:items-center md:justify-center mb-12">
-            <h2 className="text-4xl md:text-6xl font-semibold mb-4 text-accent-purple">
-              projects<span className='text-accent-purple'>/</span>
+            <h2 className="text-4xl md:text-6xl font-semibold mb-4 text-sky-blue">
+              projects<span className='text-sky-blue'>/</span>
             </h2>
             <p className="text-xl mb-6 max-w-3xl md:text-center">
               Recent work that showcases my skills and approach to development challenges.
@@ -143,7 +149,7 @@ const Home = () => {
             {works.slice(0, 3).map((project, index) => (
               <div
                 key={index}
-                className="bg-dark-background rounded-lg overflow-hidden border border-gray-700 hover:border-accent-purple transition-all flex flex-col h-full"
+                className="bg-dark-background rounded-lg overflow-hidden border border-gray-700 hover:border-sky-blue transition-all flex flex-col h-full"
               >
                 <div className="h-48 bg-gray-800"></div>
                 <div className="p-6 flex-1 flex flex-col">
@@ -183,77 +189,77 @@ const Home = () => {
       </section>
 
       {/* Skills Section */}
-      <section className="py-16 px-4 bg-dark-background">
+      <section className="py-8 px-4 bg-dark-background">
         <div className="container mx-auto">
           <div className="flex flex-col md:min-h-[30vh] md:p-8 md:items-center md:justify-center mb-12">
-            <h2 className="text-4xl md:text-6xl font-semibold mb-4 text-accent-purple">
-              skills<span className='text-accent-purple'>/</span>
+            <h2 className="text-4xl md:text-6xl font-semibold mb-4 text-sky-blue">
+              skills<span className='text-sky-blue'>/</span>
             </h2>
-            <p className="text-xl mb-6 max-w-3xl">
+            <p className="text-xl mb-6 max-w-3xl md:text-center">
               My technical toolbox that I use to build amazing digital experiences.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-4 gap-8 mb-16">
-            <div className="bg-card rounded-lg p-6 border border-gray-700 hover:border-accent-purple transition-all">
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
+            <div className="bg-card rounded-lg p-6 border border-gray-700 hover:border-sky-blue transition-all">
               <h3 className="font-bold mb-4 border-b border-gray-700 pb-2">Languages</h3>
               <ul className="text-neutral-gray space-y-2">
                 <li className="flex items-center gap-2">
-                  <span className="text-accent-purple">●</span>Python
+                  <span className="text-sky-blue">●</span>Python
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-accent-purple">●</span>JavaScript
+                  <span className="text-sky-blue">●</span>JavaScript
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-accent-purple">●</span>HTML/CSS
+                  <span className="text-sky-blue">●</span>HTML/CSS
                 </li>
               </ul>
             </div>
-            <div className="bg-card rounded-lg p-6 border border-gray-700 hover:border-accent-purple transition-all">
+            <div className="bg-card rounded-lg p-6 border border-gray-700 hover:border-sky-blue transition-all">
               <h3 className="font-bold mb-4 border-b border-gray-700 pb-2">Frameworks</h3>
               <ul className="text-neutral-gray space-y-2">
                 <li className="flex items-center gap-2">
-                  <span className="text-accent-purple">●</span>Django
+                  <span className="text-sky-blue">●</span>Django
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-accent-purple">●</span>React
+                  <span className="text-sky-blue">●</span>React
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-accent-purple">●</span>Tailwind CSS
+                  <span className="text-sky-blue">●</span>Tailwind CSS
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-accent-purple">●</span>Bootstrap
+                  <span className="text-sky-blue">●</span>Bootstrap
                 </li>
               </ul>
             </div>
-            <div className="bg-card rounded-lg p-6 border border-gray-700 hover:border-accent-purple transition-all">
+            <div className="bg-card rounded-lg p-6 border border-gray-700 hover:border-sky-blue transition-all">
               <h3 className="font-bold mb-4 border-b border-gray-700 pb-2">Databases</h3>
               <ul className="text-neutral-gray space-y-2">
                 <li className="flex items-center gap-2">
-                  <span className="text-accent-purple">●</span>MySQL
+                  <span className="text-sky-blue">●</span>MySQL
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-accent-purple">●</span>PostgreSQL
+                  <span className="text-sky-blue">●</span>PostgreSQL
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-accent-purple">●</span>MongoDB
+                  <span className="text-sky-blue">●</span>MongoDB
                 </li>
               </ul>
             </div>
-            <div className="bg-card rounded-lg p-6 border border-gray-700 hover:border-accent-purple transition-all">
+            <div className="bg-card rounded-lg p-6 border border-gray-700 hover:border-sky-blue transition-all">
               <h3 className="font-bold mb-4 border-b border-gray-700 pb-2">Tools</h3>
               <ul className="text-neutral-gray space-y-2">
                 <li className="flex items-center gap-2">
-                  <span className="text-accent-purple">●</span>Git & GitHub
+                  <span className="text-sky-blue">●</span>Git & GitHub
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-accent-purple">●</span>Excel & PowerBI
+                  <span className="text-sky-blue">●</span>Excel & PowerBI
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-accent-purple">●</span>WordPress
+                  <span className="text-sky-blue">●</span>WordPress
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-accent-purple">●</span>CPanel
+                  <span className="text-sky-blue">●</span>CPanel
                 </li>
               </ul>
             </div>
@@ -261,12 +267,15 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Coding Languages Ticker Section */}
+        <CodingLanguages />
+
       {/* Contact Section */}
       <section className="py-16 px-4 bg-card text-center">
         <div className="container mx-auto">
           <div className="flex flex-col md:min-h-[30vh] md:p-8 md:items-center md:justify-center mb-12">
-            <h2 className="text-4xl md:text-6xl font-semibold mb-4 text-accent-purple">
-              contact<span className='text-accent-purple'>/</span>me
+            <h2 className="text-4xl md:text-6xl font-semibold mb-4 text-sky-blue">
+              contact<span className='text-sky-blue'>/</span>me
             </h2>
             <p className="text-xl mb-6 max-w-3xl mx-auto">
               Interested in working together? Let's discuss how I can help bring your ideas to life.
@@ -283,7 +292,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 };
 

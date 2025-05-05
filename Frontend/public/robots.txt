@@ -1,0 +1,9 @@
+# Allow all web crawlers
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://reagancodes.com/sitemap.xml
+
+# Disallow access to specific files/directories if needed
+# Disallow: /private/ 

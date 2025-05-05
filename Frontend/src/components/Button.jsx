@@ -10,6 +10,7 @@ const Button = ({
   onClick = null,
   className = '',
   isExternal = false,
+  disabled = false,
   ...props 
 }) => {
   // Base styles
@@ -24,15 +25,18 @@ const Button = ({
   
   // Variant styles
   const variantStyles = {
-    filled: "bg-accent-purple text-white hover:bg-opacity-90",
-    outlined: "border border-accent-purple text-white hover:bg-accent-purple hover:text-white"
+    filled: "bg-sky-blue text-white hover:bg-opacity-90",
+    outlined: "border border-sky-blue text-white hover:bg-sky-blue hover:text-white"
   };
   
-  // Combine all styles
-  const buttonClasses = `${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${className}`;
+  // Disabled styles
+  const disabledStyle = disabled ? "opacity-50 cursor-not-allowed" : "";
   
-  // If href is provided, render an anchor tag
-  if (href) {
+  // Combine all styles
+  const buttonClasses = `${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${disabledStyle} ${className}`;
+  
+  // If href is provided and not disabled, render an anchor tag
+  if (href && !disabled) {
     return (
       <a 
         href={href} 
@@ -46,8 +50,8 @@ const Button = ({
     );
   }
   
-  // If to is provided, render a Link component from react-router-dom
-  if (to) {
+  // If to is provided and not disabled, render a Link component from react-router-dom
+  if (to && !disabled) {
     return (
       <Link to={to} className={buttonClasses} {...props}>
         {children}
@@ -60,6 +64,7 @@ const Button = ({
     <button 
       className={buttonClasses}
       onClick={onClick} 
+      disabled={disabled}
       {...props}
     >
       {children}

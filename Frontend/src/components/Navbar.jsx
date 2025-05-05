@@ -26,7 +26,7 @@ function Navbar() {
           <div className="md:hidden">
             <button 
               onClick={toggleMenu} 
-              className="text-white focus:outline-none hover:text-accent-purple transition-colors"
+              className="text-white focus:outline-none hover:text-sky-blue transition-colors"
             >
               {isOpen ? (
                 <FaTimes className="h-6 w-6 font-light" />
@@ -44,20 +44,21 @@ function Navbar() {
                 to={item.path}
                 className={({ isActive }) =>
                   `transition-colors font-medium ${
-                    isActive ? 'text-white' : 'text-neutral-gray hover:text-accent-purple'
+                    isActive ? 'text-white' : 'text-neutral-gray hover:text-sky-blue'
                   }`
                 }
                 end={item.path === '/'}
               >
-                <span className='text-accent-purple'>#</span>{item.name}
+                <span className='text-sky-blue'>#</span>{item.name}
               </NavLink>
             ))}
             <a 
-              href={CV} 
+              // href={CV}
+              href="https://drive.google.com/file/d/1-_0000000000000000000000000000000000000000/view?usp=sharing"
               download="Reagan-Odhiambo-CV.docx"
               target="_blank" 
               rel="noopener noreferrer"
-              className="border border-accent-purple text-accent-purple px-6 py-2 rounded hover:bg-accent-purple hover:text-white transition-all"
+              className="border border-sky-blue text-sky-blue px-6 py-2 rounded hover:bg-sky-blue hover:text-white transition-all"
             >
               Resume
             </a>
@@ -82,12 +83,12 @@ function Navbar() {
                   key={item.name}
                   to={item.path}
                   className={`transition-colors font-semibold ${
-                    location.pathname === item.path ? 'text-white' : 'text-neutral-gray hover:text-accent-purple'
+                    location.pathname === item.path ? 'text-white' : 'text-neutral-gray hover:text-sky-blue'
                   }`}
                   onClick={() => setIsOpen(false)}
                   end={item.path === '/'}
                 >
-                  <span className='text-accent-purple'>#</span>{item.name}
+                  <span className='text-sky-blue'>#</span>{item.name}
                 </NavLink>
               ))}
             </ul>
@@ -96,23 +97,23 @@ function Navbar() {
                 href="/Reagan-Odhiambo-CV.pdf" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="border border-accent-purple text-accent-purple px-6 py-2 rounded hover:bg-accent-purple hover:text-white transition-all w-full text-center"
+                className="border border-sky-blue text-sky-blue px-6 py-2 rounded hover:bg-sky-blue hover:text-white transition-all w-full text-center"
                 onClick={() => setIsOpen(false)}
               >
                 Resume
               </a>
               <div className="flex gap-8 justify-center items-center text-3xl mt-12">
                 <a href="https://www.linkedin.com/in/reaganodhiambo404/" target="_blank" rel="noopener noreferrer">
-                  <FaLinkedin className='hover:text-accent-purple transition-all' />
+                  <FaLinkedin className='hover:text-sky-blue transition-all' />
                 </a>
                 <a href="https://github.com/reaganodhiambo" target="_blank" rel="noopener noreferrer">
-                  <FaGithub className='hover:text-accent-purple transition-all' />
+                  <FaGithub className='hover:text-sky-blue transition-all' />
                 </a>
                 <a href="https://www.instagram.com/fadh3lah/" target="_blank" rel="noopener noreferrer">
-                  <FaInstagram className='hover:text-accent-purple transition-all' />
+                  <FaInstagram className='hover:text-sky-blue transition-all' />
                 </a>
                 <a href="https://www.twitter.com/reaganodhiambo/" target="_blank" rel="noopener noreferrer">
-                  <FaTwitter className='hover:text-accent-purple transition-all' />
+                  <FaTwitter className='hover:text-sky-blue transition-all' />
                 </a>
               </div>
             </div>

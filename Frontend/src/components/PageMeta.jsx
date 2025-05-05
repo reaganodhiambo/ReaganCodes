@@ -1,8 +1,6 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 
-
-const PageTitle = ({ title, description }) => {
+const PageMeta = ({ title, description }) => {
   const baseTitle = 'Reagan Codes';
   // Special case for home page to avoid "Home | Reagan Codes" and just use "Reagan Codes"
   const fullTitle = !title || title === "Home" ? baseTitle : `${title} | ${baseTitle}`;
@@ -19,23 +17,25 @@ const PageTitle = ({ title, description }) => {
   const canonicalUrl = currentUrl || baseUrl;
 
   return (
-    <Helmet>
-      <title data-react-helmet="true">{fullTitle}</title>
-      <meta name="description" content={metaDescription} data-react-helmet="true" />
-      <link rel="canonical" href={canonicalUrl} data-react-helmet="true" />
+    <>
+      <title>{fullTitle}</title>
+      <meta name="description" content={metaDescription} />
+      <link rel="canonical" href={canonicalUrl} />
       
       {/* Open Graph tags for social sharing */}
-      <meta property="og:title" content={fullTitle} data-react-helmet="true" />
-      <meta property="og:description" content={metaDescription} data-react-helmet="true" />
-      <meta property="og:url" content={canonicalUrl} data-react-helmet="true" />
-      <meta property="og:type" content="website" data-react-helmet="true" />
+      <meta property="og:title" content={fullTitle} />
+      <meta property="og:description" content={metaDescription} />
+      <meta property="og:url" content={canonicalUrl} />
+      <meta property="og:type" content="website" />
+      <meta property="og:image" content="/reagan-codes-favicon-color.png" />
       
       {/* Twitter Card data */}
-      <meta name="twitter:card" content="summary" data-react-helmet="true" />
-      <meta name="twitter:title" content={fullTitle} data-react-helmet="true" />
-      <meta name="twitter:description" content={metaDescription} data-react-helmet="true" />
-    </Helmet>
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:title" content={fullTitle} />
+      <meta name="twitter:description" content={metaDescription} />
+      <meta name="twitter:image" content="/reagan-codes-favicon-color.png" />
+    </>
   );
 };
 
-export default PageTitle; 
+export default PageMeta; 

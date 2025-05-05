@@ -1,33 +1,29 @@
 @import 'tailwindcss';
 
 @theme {
-  /* Colors */
-  --color-accent-purple: #C778DD;
+  --color-sky-blue: #1AC8ED;
   --color-neutral-gray: #ABB2BF;
   --color-pure-white: #FFFFFF;
   --color-dark-background: #272C34;
   --color-card-background: #23232b;
 
-  /* Font Families */
   --font-sans: 'Inter', sans-serif;
   --font-fira: 'Fira Code', monospace;
 
-  /* Font Sizes */
   --font-size-base: 16px;
-  --font-size-heading: 32px; /* Define heading font size */
+  --font-size-heading: 32px;
 }
 
-/* Global styles */
 body {
   @apply bg-dark-background text-pure-white font-fira;
 }
 
 p {
-  @apply text-neutral-gray; /* Neutral gray color and 16px font size */
+  @apply text-neutral-gray; 
 }
 
 h1, h2, h3, h4, h5, h6 {
-  @apply text-pure-white; /* Use the custom heading size and make it bold */
+  @apply text-pure-white; 
 }
 
 /* Utility classes */
