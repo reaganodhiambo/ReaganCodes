@@ -6,8 +6,19 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [
     react(),
-    tailwindcss()],
+    tailwindcss()
+  ],
   server: {
     allowedHosts: ['reagancodes.com', 'www.reagancodes.com'],
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    }
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: undefined
+      }
+    }
+  }
 })

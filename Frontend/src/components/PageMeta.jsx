@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PageMeta = ({ title, description }) => {
+const PageMeta = ({ title, description, keywords }) => {
   const baseTitle = 'Reagan Codes';
   // Special case for home page to avoid "Home | Reagan Codes" and just use "Reagan Codes"
   const fullTitle = !title || title === "Home" ? baseTitle : `${title} | ${baseTitle}`;
@@ -8,6 +8,10 @@ const PageMeta = ({ title, description }) => {
   // Default description if none provided
   const defaultDescription = "Reagan Codes - Software developer creating exceptional digital experiences with React, Django, and modern web technologies.";
   const metaDescription = description || defaultDescription;
+
+  // Default keywords if none provided
+  const defaultKeywords = "freelance developer, web development, React developer, Django developer, full stack developer, software engineer, web design, frontend development, backend development, responsive design, UI/UX, JavaScript, Python";
+  const metaKeywords = keywords || defaultKeywords;
 
   // Get current URL for canonical
   const currentUrl = typeof window !== 'undefined' ? window.location.href.split('?')[0] : '';
@@ -20,6 +24,7 @@ const PageMeta = ({ title, description }) => {
     <>
       <title>{fullTitle}</title>
       <meta name="description" content={metaDescription} />
+      <meta name="keywords" content={metaKeywords} />
       <link rel="canonical" href={canonicalUrl} />
       
       {/* Open Graph tags for social sharing */}

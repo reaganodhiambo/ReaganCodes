@@ -22,7 +22,8 @@ const Projects = () => {
     <main className="bg-dark-background min-h-screen py-16 px-4">
       <PageMeta 
         title="Projects"
-        description="Explore my portfolio of digital solutions crafted for real-world challenges and discover how I transform business problems into elegant digital solutions."
+        description="Explore my portfolio of web development projects showcasing my expertise and see how I solve real-world problems through code."
+        keywords="web development portfolio, React projects, Django projects, full stack applications, freelance developer projects, web apps, responsive design, UI/UX portfolio, code samples, development case studies"
       />
 
       <div className="container mx-auto">

@@ -6,8 +6,9 @@ const Contacts = () => {
   return (
     <main className="bg-dark-background min-h-screen py-16 px-4">
       <PageMeta 
-        title="Contact Me"
-        description="Ready to transform your digital presence? As a full stack developer, I offer personalized solutions tailored to your business needs. Let's collaborate on your vision."
+        title="Contact"
+        description="Get in touch with Reagan for your web development needs. Whether you need a new website, web application, or digital consultation, I'm here to help bring your vision to life."
+        keywords="contact developer, hire freelance developer, web development services, React development, Django development, custom web solutions, website consultation, freelance programmer, software development contact, get in touch"
       />
       
       <div className="container mx-auto">

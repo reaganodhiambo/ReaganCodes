@@ -12,7 +12,8 @@ const Home = () => {
     <div className="bg-dark-background min-h-screen">
       <PageMeta 
         title="Home"
-        description="Full-stack developer crafting exceptional online experiences. I transform business challenges into elegant solutions that engage users and drive growth. Let's build something amazing together."
+        description="I'm Reagan Odhiambo, a full-stack software developer and I transform ideas into exceptional digital experiences that engage users and drive growth."
+        keywords="freelance developer, full stack developer, React developer, Django developer, web development Nairobi, software engineer, frontend developer, backend developer, JavaScript expert, Python developer, UI/UX designer"
       />
       
       {/* Hero Section */}
@@ -173,9 +174,15 @@ const Home = () => {
                     <Button variant="filled" size="small" href={project.live} isExternal={true}>
                       Live Demo
                     </Button>
-                    <Button variant="outlined" size="small" href={project.code} isExternal={true}>
-                      Source Code
-                    </Button>
+                    {project.code ? (
+                      <Button variant="outlined" size="small" href={project.code} isExternal={true}>
+                        Source Code
+                      </Button>
+                    ) : (
+                      <Button variant="outlined" size="small" disabled={true}>
+                        Private Code
+                      </Button>
+                    )}
                   </div>
                 </div>
               </div>

@@ -8,8 +8,9 @@ const About = () => {
   return (
     <main className="bg-dark-background min-h-screen py-16 px-4">
       <PageMeta 
-        title="About Me"
-        description="Meet Reagan, a Nairobi-based freelance developer who transforms business problems into elegant solutions. As a digital architect, I create experiences rather than buildings, crafting digital spaces that engage and inspire."
+        title="About"
+        description="I transform business problems into elegant solutions as a versatile full-stack developer. Think of me as a digital architect, but instead of buildings, I create experiences creating impactful digital solutions."
+        keywords="about Reagan Codes, software developer portfolio, full stack developer experience, React expert, Django specialist, web development skills, tech stack, professional background, coding journey, developer expertise"
       />
       
       <div className="container mx-auto">
