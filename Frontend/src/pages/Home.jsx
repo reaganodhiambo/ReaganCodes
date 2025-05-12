@@ -21,17 +21,18 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2  gap-12 items-center">
             <div className="text-left">
-              <h1 className="text-5xl md:text-7xl font-medium mb-6">
-                Hello, <br className='md:hidden'/> I'm <span className="text-sky-blue">Reagan</span>
+              <p className='text-2xl mb-4 '>Hello, My Name is</p>
+              <h1 className="text-4xl md:text-7xl font-medium mb-6">Reagan
+                <span className="text-sky-blue"> Odhiambo</span>
               </h1>
-              <p className="text-2xl text-neutral-gray mb-8">
+              <p className="text-2xl mb-8 md:mb-16">
                 A full stack software developer and I transform ideas into exceptional digital experiences.
               </p>
               <div className="flex gap-4 md:gap-8 justify-around md:justify-start items-center">
                 <Button variant='outlined' to="/projects">
                   View Projects
                 </Button>
-                <Button variant="filled" to="/contact">
+                <Button variant="outlined" to="/contact">
                   Contact Me
                 </Button>
               </div>
@@ -72,7 +73,7 @@ const Home = () => {
                   <p className="text-neutral-gray">Professional Experience</p>
                 </div>
                 <div className="p-4 border border-neutral-gray rounded-lg hover:border-sky-blue transition-all bg-card">
-                  <h3 className="text-2xl font-bold text-sky-blue mb-2">20+</h3>
+                  <h3 className="text-2xl font-bold text-sky-blue mb-2">30+</h3>
                   <p className="text-neutral-gray">Completed Projects</p>
                 </div>
               </div>
