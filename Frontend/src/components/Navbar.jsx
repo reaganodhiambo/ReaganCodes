@@ -3,7 +3,6 @@ import { FaBars, FaTimes, FaLinkedin, FaGithub, FaInstagram, FaTwitter } from 'r
 import { NavLink, useLocation } from 'react-router-dom';
 import { navItems } from '../assets/data';
 import Logo from './Logo';
-import CV from '../assets/Reagan-Odhiambo-CV.pdf';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -54,7 +53,7 @@ function Navbar() {
             ))}
             <a 
               // href={CV}
-              href="https://drive.google.com/file/d/1-_0000000000000000000000000000000000000000/view?usp=sharing"
+              href="https://docs.google.com/document/d/1zV_NW4GQTYG2sY_REEX7ZBX8HQhTs8-YEYYPMJ9cCA0/edit?usp=sharing"
               download="Reagan-Odhiambo-CV.docx"
               target="_blank" 
               rel="noopener noreferrer"
@@ -94,7 +93,8 @@ function Navbar() {
             </ul>
             <div className="flex flex-col gap-4 mt-12 w-72 px-8">
               <a 
-                href="/Reagan-Odhiambo-CV.pdf" 
+                href="https://docs.google.com/document/d/1zV_NW4GQTYG2sY_REEX7ZBX8HQhTs8-YEYYPMJ9cCA0/edit?usp=sharing"
+                download="Reagan-Odhiambo-CV.docx"
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="border border-sky-blue text-sky-blue px-6 py-2 rounded hover:bg-sky-blue hover:text-white transition-all w-full text-center"
