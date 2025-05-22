@@ -55,7 +55,7 @@ ROOT_URLCONF = "portfolio.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -154,7 +154,16 @@ SIMPLE_JWT = {
 }
 
 UNFOLD = {
-    "SITE_HEADER": "Reagan Codes",
     "SITE_TITLE": "Reagan Codes",
+    "SITE_HEADER": "Reagan Codes",
+    # "SITE_URL": "https://reagancodes.com",
+    "SITE_URL": "127.0.0.1:8000",
     "SITE_LOGO": lambda r: static("images/reagan-codes-favicon-color.png"),
+    "SHOW_BACK_BUTTON": True,
+    "SHOW_SEARCH": True,
+    "SHOW_NOTIFICATIONS": True,
+    "SHOW_USER_MENU": True,
+    "SHOW_THEME_SWITCHER": True,
+    "SHOW_LANGUAGE_SWITCHER": True,
+    "SHOW_FOOTER": True,
 }

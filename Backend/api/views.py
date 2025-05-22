@@ -10,6 +10,7 @@ from django.contrib.auth import get_user_model
 class BlogViewSet(viewsets.ModelViewSet):
     queryset = Blog.objects.all()
     serializer_class = BlogSerializer
+    lookup_field = "slug"
 
     def perform_create(self, serializer):
         User = get_user_model()
