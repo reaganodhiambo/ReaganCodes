@@ -11,7 +11,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.49.8",
     "@tailwindcss/vite": "^4.0.17",
+    "@tinymce/tinymce-react": "^6.1.0",
     "axios": "^1.9.0",
     "firebase": "^11.7.3",
     "framer-motion": "^12.9.4",
@@ -21,8 +23,11 @@
     "react-countup": "^6.5.3",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
+    "react-markdown": "^10.1.0",
     "react-router-dom": "^7.5.3",
-    "tailwindcss": "^4.0.17"
+    "react-syntax-highlighter": "^15.6.1",
+    "tailwindcss": "^4.0.17",
+    "tinymce": "^7.9.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
