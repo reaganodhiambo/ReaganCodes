@@ -20,7 +20,7 @@ export const works = [
     title: 'Innovation Fitness',
     description: 'Django, REST API, React, Bootstrap CSS',
     details: 'A fitness platform with membership management, class scheduling, and nutrition tracking. Features a RESTful API architecture.',
-    live: 'https://api.reagancodes.com',
+    live: 'https://innovation.reagancodes.com',
     code: null,
   },
   {
