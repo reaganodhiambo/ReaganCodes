@@ -17,8 +17,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # Set DEBUG based on environment
-ENVIRONMENT = os.environ.get("ENVIRONMENT", "development")
-DEBUG = ENVIRONMENT == "development"
+ENVIRONMENT = os.environ.get("ENVIRONMENT")
+if ENVIRONMENT == "development":
+    DEBUG = True
+else:
+    DEBUG = False
 
 # Set ALLOWED_HOSTS for production
 if DEBUG:
