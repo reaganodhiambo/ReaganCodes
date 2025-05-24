@@ -11,6 +11,7 @@ import BlogAdd from './pages/BlogAdd';
 import BlogDetail from './pages/BlogDetail';
 import NotFound from './pages/NotFound';
 import ScrollToTop from './components/ScrollToTop';
+import BlogAddMarkdown from './pages/BlogAddMarkdown';
 
 function App() {
   return (
@@ -24,9 +25,10 @@ function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contacts />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/add" element={<BlogAdd />} />
-            <Route path="/blog/:slug" element={<BlogDetail />} />
+            <Route path="/blogs" element={<Blog />} />
+            <Route path="/blogs/add" element={<BlogAdd />} />
+            <Route path="/blogs/add-markdown" element={<BlogAddMarkdown />} />
+            <Route path="/blogs/:slug" element={<BlogDetail />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

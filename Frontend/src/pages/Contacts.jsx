@@ -93,7 +93,7 @@ const Contacts = () => {
                 <label htmlFor="message" className="block text-neutral-gray mb-2">Message</label>
                 <textarea 
                   id="message" 
-                  rows="5" 
+                  rows="6" 
                   className="w-full bg-dark-background border border-gray-700 rounded-lg p-3 text-white focus:border-sky-blue focus:outline-none"
                   placeholder="Your message"
                 ></textarea>

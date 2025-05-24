@@ -45,7 +45,7 @@ const Logo = ({ size = 'responsive', showText = true, linkTo = '/' }) => {
   return (
     <Link to={linkTo} className="flex items-center gap-2">
       {logoImage}
-      {showText && <h1 className={`${textSizes[size] || textSizes.responsive} font-semibold`}>ReaganCodes.</h1>}
+      {showText && <h2 className={`${textSizes[size] || textSizes.responsive} font-bold`}>Reagan<span className='text-sky-blue'>Codes.</span></h2>}
     </Link>
   );
 };

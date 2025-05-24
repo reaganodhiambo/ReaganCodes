@@ -15,10 +15,10 @@ const About = () => {
       
       <div className="container mx-auto">
         <div className="flex flex-col md:min-h-[40vh] md:p-8 md:items-center md:justify-center">
-          <h1 className="text-4xl md:text-8xl font-semibold mb-4 text-sky-blue">
+          <h1 className="mb-4">
             about<span className='text-sky-blue'>/</span>me
           </h1>
-          <p className="text-xl mb-12 max-w-3xl">
+          <p className="mb-12 max-w-3xl md:text-center">
             The rare combination of a tech geek, problem solver, and sports enthusiast. 
             When I'm not busy turning coffee into code, I'm usually out playing rollball or skating through the streets of Nairobi.
           </p>
@@ -118,7 +118,7 @@ const About = () => {
 
         {/* Fun Facts Section */}
         <div className="mb-16">
-          <h2 className="text-3xl font-bold mb-8 text-sky-blue">fun<span className="text-white">/</span>facts</h2>
+          <h2 className="text-3xl font-bold mb-8">fun<span className="text-white">/</span>facts</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
@@ -139,7 +139,7 @@ const About = () => {
             ].map((item, index) => (
               <div
                 key={index}
-                className="p-8 border border-neutral-gray rounded-lg hover:border-sky-blue transition-all"
+                className="p-8 border border-gray-700 rounded-lg hover:border-sky-blue transition-all"
               >
                 <div className="mb-6">{item.icon}</div>
                 <h3 className="text-2xl font-bold mb-4">{item.title}</h3>
@@ -211,7 +211,7 @@ const About = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8">
           <h2 className="text-3xl font-bold mb-6">Ready to work together?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             If you're looking for a developer who brings both technical skills and a unique perspective to the table, let's connect!

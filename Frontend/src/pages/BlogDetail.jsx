@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import PageMeta from '../components/PageMeta';
 import Button from '../components/Button';
 import api from '../utils/api';
+import MarkdownRenderer from '../components/MarkdownRenderer';
 
 function BlogDetail() {
   const { slug } = useParams();
@@ -35,13 +36,17 @@ function BlogDetail() {
   const date = blog.created_at ? new Date(blog.created_at).toLocaleDateString() : '';
 
   return (
-    <main className="bg-dark-background min-h-screen py-16 px-4">
+    <main className="bg-dark-background min-h-screen py-8 md:py-16 px-4">
       <PageMeta title={blog.title} description={blog.content.slice(0, 150)} />
       <div className="container mx-auto">
         <div className="max-w-5xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-bold text-center text-sky-blue mb-4">
+          <h2 className="text-2xl md:text-4xl font-bold text-center mb-4">
             {blog.title}
-          </h1>
+          </h2>
+          <div className="flex justify-start gap-6 text-gray-500 text-sm mb-8">
+            <span>By {blog.author_name}</span>
+            <span>{date}</span>
+          </div>
           {blog.image_url && (
             <div className="w-full aspect-video rounded-lg shadow mb-4 overflow-hidden">
               <img
@@ -51,13 +56,11 @@ function BlogDetail() {
               />
             </div>
           )}
-          <div className="flex justify-center gap-6 text-gray-500 text-sm mb-8">
-            <span>{date}</span>
-            <span>By {blog.author_name || 'Reagan Odhiambo'}</span>
-          </div>
+          
           <div className="text-lg leading-relaxed text-neutral-gray whitespace-pre-line mb-8">
-            {blog.content}
+            <MarkdownRenderer content={blog.content} />
           </div>
+          {/* tags */}
           <div className="flex flex-wrap gap-2 mb-4">
             {blog.tags && blog.tags.split(',').map((tag, i) => (
               <span key={i} className="bg-dark-background text-xs px-2 py-1 rounded text-neutral-gray border border-gray-700">
@@ -65,8 +68,7 @@ function BlogDetail() {
               </span>
             ))}
           </div>
-          <div className="text-sm text-gray-500 mb-2">Published: {blog.published ? 'Yes' : 'No'}</div>
-          <Link to="/blog">
+          <Link to="/blogs">
             <Button variant="outlined" className="mt-8">Back to Blog</Button>
           </Link>
         </div>

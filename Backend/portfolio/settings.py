@@ -14,12 +14,21 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-9y3t64yp@_+l4b80kq!4_uvuk6blh&+o_43c-z=!kee9^$c#mz"
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# Set DEBUG based on environment
+ENVIRONMENT = os.environ.get("ENVIRONMENT", "development")
+DEBUG = ENVIRONMENT == "development"
 
-ALLOWED_HOSTS = ["*"]
+# Set ALLOWED_HOSTS for production
+if DEBUG:
+    ALLOWED_HOSTS = ["*"]
+else:
+    ALLOWED_HOSTS = (
+        os.environ.get("ALLOWED_HOSTS", "").split(",")
+        if os.environ.get("ALLOWED_HOSTS")
+        else ["reagancodes.com"]
+    )
 
 
 # Application definition
@@ -80,7 +89,7 @@ DATABASES = {
         "USER": os.environ.get("DB_USER"),
         "PASSWORD": os.environ.get("DB_PASSWORD"),
         "HOST": os.environ.get("DB_HOST"),
-        "PORT": os.environ.get("DB_PORT"),  
+        "PORT": os.environ.get("DB_PORT"),
     }
 }
 
@@ -143,6 +152,13 @@ REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     ),
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
+    "PAGE_SIZE": 9,
+    "DEFAULT_FILTER_BACKENDS": [
+        "django_filters.rest_framework.DjangoFilterBackend",
+        "rest_framework.filters.SearchFilter",
+        "rest_framework.filters.OrderingFilter",
+    ],
 }
 
 SIMPLE_JWT = {
@@ -150,7 +166,6 @@ SIMPLE_JWT = {
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
     "AUTH_HEADER_TYPES": ("Bearer",),
     "AUTH_TOKEN_CLASSES": ("rest_framework_simplejwt.tokens.AccessToken",),
-    
 }
 
 UNFOLD = {

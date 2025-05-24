@@ -3,7 +3,6 @@ import Button from '../components/Button';
 import PageMeta from '../components/PageMeta';
 import { works } from '../assets/data';
 import reagan from '../assets/images/reagan.png';
-import {motion} from "motion/react"
 import CodingLanguages from '../components/CodingLanguages';
 
 const Home = () => {

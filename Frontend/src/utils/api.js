@@ -9,13 +9,18 @@ const api = axios.create({
   },
 });
 
-export const fetchBlogs = async () => {
-  const res = await api.get('blogs/');
+export const fetchBlogs = async (params = {}) => {
+  const res = await api.get('blogs/', { params });
   return res.data;
 };
 
 export const addBlog = async (blogData) => {
   const res = await api.post('blogs/', blogData);
+  return res.data;
+};
+
+export const fetchTags = async () => {
+  const res = await api.get('tags/');
   return res.data;
 };
 
