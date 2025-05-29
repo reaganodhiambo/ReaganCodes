@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
 import PageMeta from '../components/PageMeta';
 import Button from '../components/Button';
-import supabase from '../utils/supabase';
-import { addBlog } from '../utils/api';
 import { Editor } from '@tinymce/tinymce-react';
 
 function BlogAdd() {
   const [form, setForm] = useState({
     title: '',
     content: '',
-    image_url: '',
     tags: '',
     published: false,
   });
@@ -34,32 +31,35 @@ function BlogAdd() {
     setImageFile(e.target.files[0]);
   };
 
-  const uploadImageToSupabase = async (file) => {
-    const fileExt = file.name.split('.').pop();
-    const fileName = `${Date.now()}.${fileExt}`;
-    const filePath = `blog-images/${fileName}`;
-    let { error: uploadError } = await supabase.storage.from('reagancodes').upload(filePath, file);
-    if (uploadError) throw uploadError;
-    const { data } = supabase.storage.from('reagancodes').getPublicUrl(filePath);
-    return data.publicUrl;
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError('');
     setSuccess(false);
-    let imageUrl = form.image_url || '';
     try {
+      const formData = new FormData();
+      formData.append('title', form.title);
+      formData.append('content', form.content);
+      formData.append('tags', form.tags);
+      formData.append('published', form.published);
+      formData.append('author', 1);
       if (imageFile) {
-        imageUrl = await uploadImageToSupabase(imageFile);
+        formData.append('image', imageFile);
       }
-      await addBlog({ ...form, image_url: imageUrl });
-      setForm({ title: '', content: '', image_url: '', tags: '', published: false });
-      setImageFile(null);
-      setSuccess(true);
+      const res = await fetch('/api/blogs/create/', {
+        method: 'POST',
+        body: formData,
+      });
+      const data = await res.json();
+      if (res.ok) {
+        setSuccess(true);
+        setForm({ title: '', content: '', tags: '', published: false });
+        setImageFile(null);
+      } else {
+        setError(data.error || 'Failed to add blog');
+      }
     } catch (err) {
-      setError(err.message);
+      setError('Failed to add blog');
     } finally {
       setLoading(false);
     }

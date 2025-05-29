@@ -3,13 +3,11 @@ import PageMeta from '../components/PageMeta';
 import Button from '../components/Button';
 import { addBlog } from '../utils/api';
 import MarkdownRenderer from '../components/MarkdownRenderer';
-import supabase from '../utils/supabase';
 
 function BlogAddMarkdown() {
   const [form, setForm] = useState({
     title: '',
     content: '',
-    image_url: '',
     tags: '',
     published: false,
   });
@@ -26,18 +24,9 @@ function BlogAddMarkdown() {
     });
   };
 
+  
   const handleImageChange = (e) => {
     setImageFile(e.target.files[0]);
-  };
-
-  const uploadImageToSupabase = async (file) => {
-    const fileExt = file.name.split('.').pop();
-    const fileName = `${Date.now()}.${fileExt}`;
-    const filePath = `blog-images/${fileName}`;
-    let { error: uploadError } = await supabase.storage.from('reagancodes').upload(filePath, file);
-    if (uploadError) throw uploadError;
-    const { data } = supabase.storage.from('reagancodes').getPublicUrl(filePath);
-    return data.publicUrl;
   };
 
   const handleSubmit = async (e) => {
@@ -45,17 +34,30 @@ function BlogAddMarkdown() {
     setLoading(true);
     setError('');
     setSuccess(false);
-    let imageUrl = form.image_url || '';
     try {
+      const formData = new FormData();
+      formData.append('title', form.title);
+      formData.append('content', form.content);
+      formData.append('tags', form.tags);
+      formData.append('published', form.published);
+      formData.append('author', 1); // Replace 1 with the actual user id if available
       if (imageFile) {
-        imageUrl = await uploadImageToSupabase(imageFile);
+        formData.append('image', imageFile);
       }
-      await addBlog({ ...form, image_url: imageUrl });
-      setForm({ title: '', content: '', image_url: '', tags: '', published: false });
-      setImageFile(null);
-      setSuccess(true);
-    } catch (err) {
-      setError(err.message);
+      const res = await fetch('/api/blogs/create/', {
+        method: 'POST',
+        body: formData,
+      });
+      const data = await res.json();
+      if (res.ok) {
+        setSuccess(true);
+        setForm({ title: '', content: '', tags: '', published: false });
+        setImageFile(null);
+      } else {
+        setError(data.error || 'Failed to add blog');
+      }
+    } catch {
+      setError('Failed to add blog');
     } finally {
       setLoading(false);
     }
@@ -98,13 +100,6 @@ function BlogAddMarkdown() {
             type="file"
             accept="image/*"
             onChange={handleImageChange}
-          />
-          <input
-            className="w-full mb-2 p-2 border rounded"
-            name="image_url"
-            placeholder="Image URL (optional)"
-            value={form.image_url}
-            onChange={handleChange}
           />
           <input
             className="w-full mb-2 p-2 border rounded"

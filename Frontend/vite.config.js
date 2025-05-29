@@ -9,10 +9,9 @@ export default defineConfig({
     tailwindcss()
   ],
   server: {
-    allowedHosts: ['reagancodes.com', 'www.reagancodes.com'],
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-    }
+    proxy: {
+      '/api': 'http://localhost:8000',
+    },
   },
   build: {
     rollupOptions: {

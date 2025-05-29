@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://api.reagancodes.com';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
 
 const api = axios.create({
   baseURL: `${API_BASE_URL}/api/`,
@@ -16,11 +16,6 @@ export const fetchBlogs = async (params = {}) => {
 
 export const addBlog = async (blogData) => {
   const res = await api.post('blogs/', blogData);
-  return res.data;
-};
-
-export const fetchTags = async () => {
-  const res = await api.get('tags/');
   return res.data;
 };
 
