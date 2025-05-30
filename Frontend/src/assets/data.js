@@ -31,10 +31,10 @@ export const works = [
     code: null,
   },
   {
-    title: 'Brinair Links Limited',
+    title: 'Hope For Future CBO',
     description: 'WordPress, E-commerce, Custom Plugins',
     details: 'Corporate website with e-commerce capabilities for a logistics and supply chain management company.',
-    live: 'https://brinairlinkslimited.com',
+    live: 'https://hopeforfuturecbo.org',
     code: null,
   },
   {
