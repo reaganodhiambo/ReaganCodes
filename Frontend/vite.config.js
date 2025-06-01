@@ -11,7 +11,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://api.reagancodes.com:8000',
+        target: 'http://api.reagancodes.com',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '')
       }
