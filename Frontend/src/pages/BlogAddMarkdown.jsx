@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PageMeta from '../components/PageMeta';
 import Button from '../components/Button';
-import { addBlog } from '../utils/api';
+import api from '../utils/api';
 import MarkdownRenderer from '../components/MarkdownRenderer';
 
 function BlogAddMarkdown() {
@@ -44,20 +44,20 @@ function BlogAddMarkdown() {
       if (imageFile) {
         formData.append('image', imageFile);
       }
-      const res = await fetch('/api/blogs/create/', {
-        method: 'POST',
-        body: formData,
+      const res = await api.post('blogs/create/', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
       });
-      const data = await res.json();
-      if (res.ok) {
+      if (res && res.data) {
         setSuccess(true);
         setForm({ title: '', content: '', tags: '', published: false });
         setImageFile(null);
       } else {
-        setError(data.error || 'Failed to add blog');
+        setError('Failed to add blog');
       }
-    } catch {
-      setError('Failed to add blog');
+    } catch (err) {
+      setError(err.response?.data?.error || 'Failed to add blog');
     } finally {
       setLoading(false);
     }

@@ -9,7 +9,9 @@ from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework.response import Response
 from rest_framework import status
 from supabase import create_client
+import uuid
 from django.conf import settings
+from .utils import upload_image_to_supabase
 
 # Create your views here.
 
@@ -39,20 +41,17 @@ class BlogCreateView(APIView):
 
     def post(self, request):
         # 1. Handle image upload to Supabase
-        image = request.FILES.get("image")
         image_url = ""
-        if image:
-            supabase = create_client(settings.SUPABASE_URL, settings.SUPABASE_SERVICE_KEY)
-            file_path = f"blog-images/{image.name}"
-            res = supabase.storage.from_("reagancodes").upload(file_path, image)
-            if res.get("error"):
-                return Response({"error": res["error"]["message"]}, status=400)
-            image_url = (
-                supabase.storage
-                .from_("reagancodes")
-                .get_public_url(file_path)
-                .get("publicUrl")
-            )
+        # image_file = request.FILES.get("image")
+        image_file =request.FILES["image"].read()
+        if image_file:
+            try:
+                # image_bytes = image_file.read()
+                image_url = upload_image_to_supabase(image_file)
+            except Exception as e:
+                return Response({"error": str(e)}, status=400)
+        else:
+            return Response({"error": "No image provided"}, status=400)
 
         # 2. Create the blog post
         data = request.data.copy()
