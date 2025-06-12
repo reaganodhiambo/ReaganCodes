@@ -5,33 +5,177 @@
   --color-neutral-gray: #ABB2BF;
   --color-pure-white: #FFFFFF;
   --color-dark-background: #272C34;
-  --color-card-background: #23232b;
+  --color-card-background: #2A2F36;
 
   --font-sans: 'Inter', sans-serif;
   --font-fira: 'Fira Code', monospace;
 
   --font-size-base: 16px;
   --font-size-heading: 32px;
+
+  /* Enhanced shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --shadow-glow: 0 0 20px rgba(26, 200, 237, 0.3);
 }
 
 body {
   @apply bg-dark-background text-pure-white font-fira;
+  line-height: 1.6;
 }
 
+/* Typography System */
 p {
-  @apply text-neutral-gray text-lg md:text-lg;
+  @apply text-neutral-gray text-base md:text-lg;
+  line-height: 1.7;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  @apply text-pure-white; 
+  @apply text-pure-white font-medium;
+  line-height: 1.2;
 }
-h1{
-  @apply text-4xl md:text-6xl font-bold md:font-semibold
+
+h1 {
+  @apply text-4xl md:text-6xl lg:text-7xl font-semibold;
 }
+
+h2 {
+  @apply text-3xl md:text-5xl lg:text-6xl font-medium;
+}
+
+h3 {
+  @apply text-2xl md:text-3xl lg:text-4xl font-medium;
+}
+
+h4 {
+  @apply text-xl md:text-2xl font-medium;
+}
+
+h5 {
+  @apply text-lg md:text-xl font-medium;
+}
+
+h6 {
+  @apply text-base md:text-lg font-medium;
+}
+
+/* Enhanced Card Styles */
+.card {
+  @apply bg-card-background border border-gray-700/50 rounded-xl p-6 md:p-8;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+  @apply border-sky-blue/50;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1), 0 0 20px rgba(26, 200, 237, 0.2);
+  transform: translateY(-2px);
+}
+
+.card-elevated {
+  @apply card;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+.card-elevated:hover {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 30px rgba(26, 200, 237, 0.3);
+  transform: translateY(-4px);
+}
+
+/* Section Styles */
+.section-full {
+  @apply min-h-screen flex items-center justify-center py-16 md:py-20;
+}
+
+.section-large {
+  @apply min-h-[80vh] flex items-center justify-center py-12 md:py-16;
+}
+
+.section-medium {
+  @apply min-h-[60vh] flex items-center justify-center py-8 md:py-12;
+}
+
+/* Button Enhancements */
+.btn-glow {
+  box-shadow: 0 0 20px rgba(26, 200, 237, 0.4);
+}
+
+.btn-glow:hover {
+  box-shadow: 0 0 30px rgba(26, 200, 237, 0.6);
+}
+
 /* Utility classes */
 .bg-card {
   background-color: var(--color-card-background);
 }
-/* .border-gray{
-  color: #364173;
-} */
+
+.text-gradient {
+  background: linear-gradient(135deg, #1AC8ED 0%, #00A8CC 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-dark-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-sky-blue);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00A8CC;
+}
+
+/* Animation utilities */
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Focus styles for accessibility */
+button:focus,
+a:focus,
+input:focus,
+textarea:focus {
+  outline: 2px solid var(--color-sky-blue);
+  outline-offset: 2px;
+}
